@@ -13,8 +13,8 @@
 7. Have a look at the books and tasks CRUD example
 
 ## Release/Version Notes:
-1. API Change Logs - - https://github.com/glenngoggin/mean-stack-seed-project/api/change-logs
-2. Front End Change Logs - https://github.com/glenngoggin/mean-stack-seed-project/front-end/change-logs
+1. API Change Logs - - https://github.com/glenngoggin/mean-stack-seed-project/tree/master/api/change-logs
+2. Front End Change Logs - https://github.com/glenngoggin/mean-stack-seed-project/tree/master/front-end/change-logs
 
 ## Additional Notes:
 1. I added in postman collections and postman environment to the api/postman if you want to test the API.  
