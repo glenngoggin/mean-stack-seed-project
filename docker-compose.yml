@@ -1,0 +1,28 @@
+version: '3.0'
+
+services:
+  front-end:
+    container_name: "front_end"
+    build: front-end
+    volumes:
+      - ./front-end:/app
+      - /app/node_modules
+    ports:
+      - "4200:4200"
+  api:
+    container_name: "api"
+    build: api
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    links:
+      - database
+ 
+  database:
+    container_name: "db"
+    image: mongo
+    ports:
+      - "27017:27017"  
+

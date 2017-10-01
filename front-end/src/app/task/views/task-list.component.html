@@ -1,0 +1,27 @@
+<header class="section-header row ml-3 mr-3">
+	<div class="tbl col-md-8">
+		<div class="tbl-row">
+			<div class="tbl-cell">
+				<h2>Tasks Example</h2>
+				<div class="subtitle">A simple task system where you can see CRUD and validation functionality.</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 pr-0">
+		<div class="alert alert-info" role="alert">
+			<strong>Pssst...  </strong><br>
+			you can use drag and drop here to move your tasks around ;)
+		</div>
+	</div>
+	
+</header>
+
+<app-loading *ngIf="isLoading === true"></app-loading>
+
+<div *ngIf="isLoading === false" class="tasks-grid row">
+
+	<in-queue-tasks (onRemove)="remove($event)" class="col-sm-4"></in-queue-tasks>
+	<in-progress-tasks (onRemove)="remove($event)" class="col-sm-4"></in-progress-tasks>
+	<completed-tasks (onRemove)="remove($event)" class="col-sm-4"></completed-tasks>
+	
+</div>

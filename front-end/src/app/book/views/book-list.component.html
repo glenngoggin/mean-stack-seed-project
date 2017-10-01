@@ -1,0 +1,77 @@
+<header class="section-header">
+	<div class="tbl">
+		<div class="tbl-row">
+			<div class="tbl-cell">
+				<h2>Books Example</h2>
+				<div class="subtitle">A simple book table where you can see CRUD and validation functionality.</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<section class="card">
+
+
+	<app-loading *ngIf="isLoading === true"></app-loading>
+
+	<div *ngIf="isLoading === false" class="card-block">
+		<div class="row mb-4">
+			<div class="col-sm-3">
+				<div class="table-filter">
+					<label>
+              Show 
+                <select [(ngModel)]="pageSize" class="form-control form-control-md d-inline">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select> entries
+            </label>
+				</div>
+			</div>
+			<div class="col-sm-6 d-flex justify-content-center">
+				<div class="table-filter">
+					<label>
+              Search:
+                <input [(ngModel)]="searchTerm" type="search" class="form-control form-control-md d-inline" placeholder="" aria-controls="example">
+            </label>
+				</div>
+			</div>
+			<div class="col-sm-3">
+
+			</div>
+		</div>
+		<table id="example" class="display table table-bordered" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Authors</th>
+					<th>Price</th>
+					<th>Added</th>
+					<th >Actions</th>
+				</tr>
+			</thead>
+
+			<tbody>
+        <tr *ngFor="let book of books$ | async | paginate: { itemsPerPage: pageSize, currentPage: page } | filter:searchTerm" 
+            [book]="book"
+			(onRemove)="remove($event)">
+        </tr>
+    
+        <tr *ngIf="(books$ | async)?.length==0">
+          	<td colspan="6">
+                Sorry we have no data..
+              </td>
+        </tr>
+
+			</tbody>
+			<tfoot class="has-text-centered text-center">
+				<td colspan="6">
+					<pagination-controls (pageChange)="page = $event"></pagination-controls>
+				</td>
+			</tfoot>
+		</table>
+	</div>
+</section>

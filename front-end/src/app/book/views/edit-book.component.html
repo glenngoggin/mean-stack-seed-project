@@ -1,0 +1,101 @@
+<header class="section-header">
+    <div class="tbl">
+      <div class="tbl-row">
+        <div class="tbl-cell">
+          <h2>Update Book</h2>
+          <div class="subtitle">
+              <ol class="breadcrumb breadcrumb-simple">
+                  <li class="active"><a routerLink="/books">Go back..</a></li>
+                </ol>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section class="card">
+    <div class="card-block">
+      <form #form="ngForm" (ngSubmit)="submitUpdateBookForm(form.value,form.valid)" novalidate>
+  
+        <div class="form-group row" [ngClass]="{'form-group-error': title.errors?.required && title.dirty }">
+          <label class="col-sm-12 form-control-label">
+            Title
+            <span class="color-red">*</span>
+          </label>
+          <div class="col-sm-12">
+            <p class="form-control-static">
+              <input name="title" #title="ngModel" [ngModel]="book?.title" required type="text" class="form-control" placeholder="Book Title">
+            </p>
+            <div *ngIf="title.errors?.required && title.dirty" class="form-tooltip-error">
+              <ul>
+                <li>
+                  The title is required.
+                </li>
+              </ul>
+            </div>
+  
+  
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <label for="exampleSelect" class="col-sm-12 form-control-label">Description</label>
+          <div class="col-sm-12">
+            <textarea name="description" [ngModel]="book?.description" rows="4" class="form-control" placeholder="Description"></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group row" [ngClass]="{'form-group-error': price.errors?.required && price.dirty || price.errors?.pattern && price.dirty }">
+            <label for="exampleSelect" class="col-sm-12 form-control-label">
+              Price
+              <span class="color-red">*</span>
+            </label>
+            <div class="col-sm-12">
+              <p class="form-control-static">
+                <input type="number" name="price" #price="ngModel" [ngModel]="book?.price" class="form-control" 
+                required 
+                pattern="[+-]?([0-9]*[.])?[0-9]+"
+                placeholder="Example 19.99">
+              </p>
+            
+              <div *ngIf="price.errors?.required && price.dirty" class="form-tooltip-error">
+                <ul>
+                  <li>
+                    The price is required.
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="price.errors?.pattern && price.dirty" class="form-tooltip-error">
+                  <ul>
+                    <li>
+                      This is not a valid price.
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+  
+        <div class="form-group row">
+          <label for="exampleSelect" class="col-sm-12 form-control-label">Authors</label>
+          <div class="col-sm-12">
+            <p class="form-control-static">
+              <tag-input class="form-control" name="authors" #authors="ngModel" [(ngModel)]='book.authors' [editable]='true' theme='bootstrap'
+                  [identifyBy]="'_id'" [displayBy]="'name'" secondaryPlaceholder='Add an author..'></tag-input>
+            </p>
+          </div>
+        </div>
+  
+        <div class="form-group row">
+          <div class="col-sm-12">
+            <p class="form-control-static pull-right">
+              <button [ladda]="isLoading" [disabled]="form.invalid" type="submit" class="btn btn-rounded btn-inline">Save Book</button>
+            </p>
+          </div>
+        </div>
+  
+  
+      </form>
+    </div>
+  </section>
+  

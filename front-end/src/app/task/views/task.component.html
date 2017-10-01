@@ -1,0 +1,39 @@
+<section class="box-typical task-card task" [ngClass]="task?.status" dnd-draggable [dragEnabled]="true" [dragData]="task">
+	<div class="task-card-in" >
+		<div class="btn-group task-card-menu">
+
+			<div ngbDropdown class="d-inline-block pull-right">
+				<button class="no-chevron-down">
+							<i class="font-icon-dots-vert-square" ngbDropdownToggle></i>
+					</button>
+				<div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+					<a class="dropdown-item" [routerLink]="['/tasks', task._id]">
+						<span class="lbl">Edit</span>
+					</a>
+					<a class="dropdown-item" (click)="openConfirmDeleteModal()">
+						<span class="lbl">Delete</span>
+					</a>
+
+				</div>
+			</div>
+
+		</div>
+		<div class="task-card-title">
+			<a [routerLink]="['/tasks', task._id]">{{task.description}}</a>
+		</div>
+
+		<div class="task-card-tags">
+			Assigned to:
+
+			<a *ngFor="let user of task?.users" class="label label-light-grey">
+					{{ user.name }}
+			</a>
+
+			<a *ngIf="(task?.users)?.length==0" class="label label-light-grey">
+					No one yet..
+			</a>
+
+		</div>
+	</div>
+
+</section>

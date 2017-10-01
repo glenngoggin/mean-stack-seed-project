@@ -1,0 +1,24 @@
+<td> 
+    <a [routerLink]="['/books', book._id]">{{book.title}}</a>
+</td>
+<td> {{book.description}}</td>
+<td>
+	<span *ngFor="let author of book?.authors">
+        {{ author.name }} <br/>
+    </span>
+
+</td>
+<td>{{book.price | currency:'EUR':true}}</td>
+<td>{{book.created_at | timeAgo}}</td>
+<td class="text-center">
+
+	<div class="btn-group btn-group-sm" >
+		<a [routerLink]="['/books', book._id]" class="btn btn-md btn-primary btn-rounded" >
+           <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+		<a (click)="openConfirmDeleteModal()" class="btn btn-md btn-danger btn-rounded" >
+               <span class="glyphicon glyphicon-trash"></span>
+        </a>
+	</div>
+
+</td>

@@ -1,0 +1,19 @@
+{
+    "tasks_controller_create_task_success": "You successfully created a new task.",
+    "tasks_controller_update_task_success": "You successfully updated the task.",
+    "tasks_controller_delete_task_success": "You successfully deleted the task.",
+
+    "books_controller_create_book_success": "You successfully created a new book.",
+    "books_controller_update_book_success": "You successfully updated the book.",
+    "books_controller_delete_book_success": "You successfully deleted the book.",
+
+    "authors_controller_create_author_success": "You successfully created a new author.",
+    "authors_controller_bulk_create_author_success": "You successfully created new authors.",
+    "authors_controller_update_author_success": "You successfully updated the author.",
+    "authors_controller_delete_author_success": "You successfully deleted the author.",
+
+    "users_controller_create_user_success": "You successfully created a new user.",
+    "users_controller_bulk_create_user_success": "You successfully created new users.",
+    "users_controller_update_user_success": "You successfully updated the user.",
+    "users_controller_delete_user_success": "You successfully deleted the user."   
+}

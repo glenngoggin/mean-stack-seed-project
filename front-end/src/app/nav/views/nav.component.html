@@ -1,0 +1,72 @@
+<header class="site-header">
+	<div class="container-fluid">
+		<a href="#" class="site-logo">
+	            <img class="hidden-md-down" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="">
+	            <img class="hidden-lg-down" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="">
+	        </a>
+
+		<button class="show-hide-sidebar" (click)="toggleSideBar()">
+	            <span>toggle menu</span>
+	        </button>
+
+		<button class="hamburger hamburger--htla">
+	            <span>toggle menu</span>
+	        </button>
+		<div class="site-header-content">
+			<div class="site-header-content-in">
+				<div class="site-header-shown">
+
+						<div ngbDropdown class="d-inline-block pull-right">
+								<button class="btn btn-rounded btn-success dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Create</button>
+								<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+									<a class="dropdown-item" routerLink="/books/create">
+										<span class="lbl">Book</span>
+									</a>
+									<a class="dropdown-item" routerLink="/tasks/create">
+										<span class="lbl">Task</span>
+									</a>
+								</div>
+							</div>
+
+				
+				</div>
+				<!--.site-header-shown-->
+
+				<div class="mobile-menu-right-overlay"></div>
+				<div class="site-header-collapsed">
+					<div class="site-header-collapsed-in">
+						
+
+					</div>
+					<!--.site-header-collapsed-in-->
+				</div>
+				<!--.site-header-collapsed-->
+			</div>
+			<!--site-header-content-in-->
+		</div>
+		<!--.site-header-content-->
+	</div>
+	<!--.container-fluid-->
+</header>
+<!--.site-header-->
+
+<div class="mobile-menu-left-overlay"></div>
+
+<nav class="side-menu side-menu-compact">
+	<ul class="side-menu-list">
+		<li class="green" routerLinkActive="opened">
+			<a routerLink="/books" >
+                        <i class="font-icon font-icon-contacts"></i>
+                        <span class="lbl">Books</span>
+					</a>
+		</li>
+		<li class="blue" routerLinkActive="opened">
+			<a routerLink="/tasks" >
+                        <i class="font-icon font-icon-notebook"></i>
+                        <span class="lbl">Tasks</span>
+					</a>
+		</li>
+	</ul>
+
+</nav>
+<!--.side-menu-->

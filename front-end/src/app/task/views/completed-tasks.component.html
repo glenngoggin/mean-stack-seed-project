@@ -1,0 +1,16 @@
+<div class="tasks-grid-col green col-sm-12" dnd-droppable (onDropSuccess)="drop($event)">
+	<div class="tasks-grid-col-title">Completed: 
+		<strong>{{ (tasks$ | async)?.length }}</strong>
+	</div>
+
+	<div class="sortable">
+
+		<task *ngFor="let task of tasks$ | async" [task]="task" (onRemove)="remove($event)">
+		</task>
+
+		<div class="col-sm-12 text-left" *ngIf="(tasks$ | async)?.length==0">
+			No tasks..
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,53 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "Sample Node API",
+  "author": "Glenn Goggin <glennpgoggin@gmail.com>",
+  "main": "server.js",
+  "private": true,
+  "bin": {
+    "seed": "./bin/seed"
+  },
+  "scripts": {
+    "start": "nodemon -L server.js",
+    "build": "npm i",
+    "test": "",
+    "lint": "",
+    "e2e": "",
+    "seed": "node ./bin/seed",
+    "backup": "bash ./bin/backup.sh"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "errno": "^0.1.4",
+    "express": "4.14.0",
+    "express-jwt": "5.1.0",
+    "express-promise-router": "^2.0.0",
+    "express-response-handler": "^1.2.0",
+    "express-validation": "^1.0.2",
+    "express-winston": "2.1.2",
+    "helmet": "^3.8.1",
+    "http-status": "^1.0.1",
+    "i18n": "^0.8.3",
+    "joi": "^9.0.4",
+    "json2mongo": "^1.1.0",
+    "jsonwebtoken": "7.1.9",
+    "lodash": "^3.1.0",
+    "migrate": "^0.2.3",
+    "mongodb": "^2.2.31",
+    "mongodb-backup-cli": "^0.5.0",
+    "mongoose": "^4.11.12",
+    "mongoose-migrate-2": "^0.2.2",
+    "optimist": "^0.6.1",
+    "q": "^1.4.1",
+    "winston": "2.3.0",
+    "winston-mongodb": "^2.0.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "jshint": "^2.9.5"
+  }
+}

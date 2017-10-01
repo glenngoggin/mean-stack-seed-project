@@ -1,0 +1,5 @@
+{
+	"undefined": "database/js_jobs_development",
+	"dev": "database/js_jobs_development",
+	"prod": "database/js_jobs_development"
+}
